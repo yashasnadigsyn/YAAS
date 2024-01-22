@@ -1,0 +1,233 @@
+:root {
+  --main-bg: #1A252B;
+  --text-color: #A8CED0;
+  --text-red: #D3615E;
+}
+
+@keyframes bar-animation {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes middlegrid-border-expand {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    width: 0%;
+    height: 0%;
+  }
+  50% {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    height: 0%;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes lateappearcontent {
+  from {
+    visibility: visible;
+    opacity: 0;
+  }  
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: var(--main-bg);
+  height: 100%;
+  width: 100%;
+}
+
+.themainpart {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "toppart" "toppart" "bottompart";
+}
+
+.topgrid {
+  grid-area: toppart;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "leftpart middlepart middlepart middlepart middlepart rightpart";
+  grid-gap: 5px;
+}
+
+.leftgrid {
+  grid-area: leftpart;
+  width: 100%;
+  height: 100%;
+}
+
+.leftgrid_bar_text {
+  position: relative;
+  top: 2%;
+  
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--text-color);
+  font-size: x-small;
+
+  padding-right: 2px;
+
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.leftgrid_bar {
+  padding-bottom: 2px;
+
+  animation: bar-animation 1s linear 0s 1 normal forwards;
+}
+
+.leftgrid_bar hr {
+  color: rgb(33, 43, 43);
+}
+
+.currenttime_container {
+  display: flex;
+  justify-content: center;
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.currentdate_container {
+  display: flex;
+  justify-content: center;
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.batterydata {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "percentage status";
+  grid-gap: 5px; */
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.batterydata_percentage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.batterydata_status {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.middlegrid {
+  grid-area: middlepart;
+  width: 98%;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.middlegrid_bar_text {
+  position: relative;
+  top: 2%;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--text-color);
+  font-size: x-small;
+
+  padding-left: 2px;
+  padding-right: 2px;
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.middlegrid_bar {
+  padding-bottom: 2px;
+
+  animation: bar-animation 1s linear 0s 1 normal forwards;
+}
+
+.middlegrid_bar hr {
+  color: rgb(33, 43, 43);
+}
+
+.middlegrid_videoplayer {
+  border: 1px solid var(--text-color);
+  animation: middlegrid-border-expand 1.5s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.rightgrid {
+  grid-area: rightpart;
+  width: 100%;
+  height: 100%;
+}
+
+.rightgrid_bar_text {
+  position: relative;
+  top: 2%;
+  
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--text-color);
+  font-size: x-small;
+
+  padding-right: 2px;
+
+  animation: lateappearcontent 1s linear 1s 1 normal forwards;
+  visibility: hidden;
+}
+
+.rightgrid_bar {
+  padding-bottom: 2px;
+
+  animation: bar-animation 1s linear 0s 1 normal forwards;
+}
+
+.rightgrid_bar hr {
+  color: rgb(33, 43, 43);
+}
+
+.bottomgrid {
+  grid-area: bottompart;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
